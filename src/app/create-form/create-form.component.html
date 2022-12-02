@@ -1,0 +1,195 @@
+<!-- For bootstrap dropdown icons to work you must run: npm install bootstrap bootstrap-icons
+ then add "node_modules/bootstrap-icons/font/bootstrap-icons.css" to "styles" array
+ and "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" to "scripts" array in angular.json file -->
+
+<div class="container-fluid">
+  <!-- Start of Form -->
+  <form
+  class="main-container"
+  (ngSubmit)="onSubmitForm(newFormRef)"
+  #newFormRef="ngForm">
+
+  <div class="form-group pb-3">
+    <label for="title">Title:</label>
+    <input
+      class="form-control"
+      type="text"
+      id="title"
+      name="title"
+      ngModel>
+  </div>
+
+    <!-- Accordion -->
+    <div class="accordion" id="form-sections">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              Nursing
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+              <div class="form-group">
+                <label for="nursingTextArea">Nursing Note</label>
+                <textarea
+                  class="form-control"
+                  id="nursingTextArea"
+                  rows="3"
+                  name="nursingTextArea"
+                  ngModel
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Flow Sheets
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <div class="row justify-content-between text-left pb-2">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    ngModel
+                  >
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label">Age</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="age"
+                    name="age"
+                    ngModel
+                  >
+                </div>
+              </div>
+              <!-- end of row -->
+              <div class="row justify-content-between text-left pb-2">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label">Allergies</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="allergies"
+                    name="allergies"
+                    ngModel
+                  >
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label">Code Status</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="codeStatus"
+                    name="codeStatus"
+                    ngModel
+                  >
+                </div>
+              </div>
+              <!-- end of row -->
+              <h6 class="text-center pt-2">Vital Signs</h6>
+              <div class="row justify-content-between text-left pb-2">
+                <div class="form-group col-12 flex-column d-flex">
+                  <label class="form-control-label">Vitals/Date</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Provider
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <div class="form-group">
+                <label for="providerTextArea">Health Care Provider Prescriptions/Notes</label>
+                <textarea
+                  class="form-control"
+                  id="providerTextArea"
+                  rows="3"
+                  name="providerTextArea"
+                  ngModel
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              Labs & Diagnostics
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+              MAR
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+              Collaborative Care
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+              Other
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Submit
+        </button>
+        <button class="btn btn-warning" type="reset">
+          Reset
+        </button>
+
+    </div>
+
+  </form>
+</div>

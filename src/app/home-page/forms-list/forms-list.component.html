@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-xs-12"
+      *ngFor="let form of formsList"
+    >
+      <button
+      type="button"
+      class="btn btn-danger btn-sm"
+      (click)="onDeleteForm(form.id)"
+      >
+        &minus;
+      </button>
+      <app-form-details
+        [formData]="form"></app-form-details>
+   </div>
+  </div>
+</div>
