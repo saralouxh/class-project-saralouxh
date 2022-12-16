@@ -1,0 +1,17 @@
+<div class="container" *ngIf="formData">
+  <a [routerLink]="['/display', formData.id]" class="data">
+    <div class="card d-flex">
+
+      <div class="card-body">
+        <h1 class="text card-title d-flex justify-content-center">{{ formData.title }}</h1>
+      </div>
+
+      <div class="card-footer bg-transparent">
+        <p class="text">Created: </p>
+      </div>
+
+    </div>
+  </a>
+</div>
+
+

@@ -1,0 +1,137 @@
+<!-- add angular add row -->
+<div class="container-fluid" *ngIf="formData">
+  <!-- Edit & Delete Buttons -->
+  <div class="float-end">
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="onDeleteForm(formData.id)"
+    >
+      <span class="material-symbols-outlined">
+        delete
+      </span>
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="onEditForm()"
+    >
+      <span class="material-symbols-outlined">
+        edit
+      </span>
+    </button>
+
+  </div>
+
+  <!-- Title -->
+  <table class="table table-bordered">
+    <!-- Title -->
+    <thead>
+      <tr>
+        <th class="text-center" style="height: 41px;">Title: {{formData.title}}</th>
+      </tr>
+    </thead>
+  </table>
+
+  <!-- Nursing Notes -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">Nursing Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="height: 41px;">
+          {{formData.nursingTextArea}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Flow Sheets -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">Flow Sheets</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th class="text-center">Name</th>
+        <th class="text-center">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="height: 41px;">
+          {{formData.name}}
+        </td>
+        <td style="height: 41px;">
+          {{formData.age}}
+        </td>
+      </tr>
+    </tbody>
+
+    <thead>
+      <tr>
+        <th class="text-center">Allergies</th>
+        <th class="text-center">Code Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="height: 41px;">
+          {{formData.allergies}}
+        </td>
+        <td style="height: 41px;">
+          {{formData.codeStatus}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Provider Notes -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">Health Care Provider Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="height: 41px;">
+          {{formData.providerTextArea}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Labs & Diagnostics -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" colspan="2">Lab Results</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th class="text-center">Vitals</th>
+        <th class="text-center">Temperature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="height: 41px;">
+          {{formData.vitals}}
+        </td>
+        <td style="height: 41px;">
+          {{formData.temperature}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Other -->
+
+</div>

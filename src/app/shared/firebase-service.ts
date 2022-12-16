@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { FormModel } from './form.model';
 import { FIREBASE_FORMS } from 'src/constants/firebase-root';
-import { FormService } from './form.service';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,39 +14,35 @@ import { FormService } from './form.service';
 export class FirebaseService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private authService: AuthService
   ) {}
 
-  // Get requests have no second argument because you're not sending any data, just requesting data
-  fetchFormsInFirebase(): any {
-    // Don't forget to return here
-    return this.http.get<{ [key: string]: FormModel }>(FIREBASE_FORMS + ".json")
-      // Call pipe before the subscribe method to transform observable data
-      .pipe(map(responseData => {
-        // To convert the JS object to an array we have to manually loop through all the keys and create a new array: forms = []
-        let forms: FormModel[] = [];
-        // Use "for in" loop to go through all your keys in responseData(which will be an object)
-        // then push each piece of data into "forms"
-        for (let key in responseData) {
-          forms.push({...responseData[key], id: key});
-        }
-        // Return "forms" array inside map so it is forwarded to our subscribe function
-        return forms;
-      }));
-      // .subscribe((responseData) => {
-      //   console.log(responseData);
-      // });
+  fetchFormsInFirebase() {
+    return this.http.get(FIREBASE_FORMS + ".json");
   }
 
-  // fetchFormsFromFirebase() {
-  //   this.http.get<FormModel[]>(FIREBASE_FORMS + '.json')
-  //   .pipe(map(forms => {
-  //     return forms.map(form => {
-  //       return {...form}
-  //     });
-  //   })).subscribe(forms => {
-  //     this.formService.setForms(forms);
-  //   });
+  // // Get requests have no second argument because you're not sending any data, just requesting data
+  // fetchFormsInFire() {
+  //   // return http request where we get our forms inside of exhaustMap, then this entire observable chain now switches to this http observable
+  //   return this.http.get<{ [key: string]: FormModel }>(
+  //     FIREBASE_FORMS + ".json"
+  //   )
+  //   .pipe(
+  //     map(responseData => {
+  //       // To convert the JS object to an array we have to manually loop through all the keys and create a new array: forms = []
+  //       const forms: FormModel[]= [];
+  //       // Use "for in" loop to go through all your keys in responseData(which will be an object)
+  //       // then push each piece of data into "forms"
+  //       for (const key in responseData) {
+  //         if(responseData.hasOwnProperty(key)){
+  //           forms.push( {...responseData[key], id: key} );
+  //         }
+  //       }
+  //       // Return "forms" array inside map so it is forwarded to our subscribe function
+  //       return forms;
+  //     })
+  //   );
   // }
 
   saveFormToFirebase(formData: FormModel) {
@@ -59,8 +55,4 @@ export class FirebaseService {
   deleteFormInFirebase(formId: string) {
     this.http.delete(FIREBASE_FORMS + '/' + formId + '.json').subscribe();
   }
-
-  // getFormBbyId(id: string) {
-  //   return this.http.get(FIREBASE_FORMS + id + '.json')
-  // }
 }

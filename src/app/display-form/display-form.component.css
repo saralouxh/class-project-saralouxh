@@ -1,0 +1,36 @@
+.container-fluid {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding-right: 5rem;
+  margin-bottom: 2rem;
+}
+
+.table {
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+
+/* .table-bordered {
+  border-width: thick;
+  border-color: rgb(184, 178, 178);
+} */
+
+table, th, td {
+  border-color: rgb(184, 178, 178);
+  border-width: thick;
+}
+
+.float-end {
+  padding-bottom: 1em;
+}
+
+.btn-danger {
+  margin-right: 1em;
+  width: 50px;
+  height: 40px;
+}
+
+.btn-success {
+  width: 50px;
+  height: 40px;
+}

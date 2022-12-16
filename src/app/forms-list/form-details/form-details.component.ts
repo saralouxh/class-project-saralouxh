@@ -10,7 +10,7 @@ import { FormService } from '../../shared/form.service';
 })
 export class FormDetailsComponent implements OnInit {
   // Make sure to import the FormModel
-  // Bind to formData in the saved-forms.component.html on the <app-form-details> elememt selector
+  // Bind to form in the forms-list.component.html on the <app-form-details> elememt selector
   @Input() formData: FormModel;
 
   constructor( private formService: FormService ) { }
@@ -18,5 +18,4 @@ export class FormDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
 }

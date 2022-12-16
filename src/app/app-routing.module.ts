@@ -3,16 +3,21 @@ import { NgModule } from "@angular/core";
 
 import { HomePageComponent } from "./home-page/home-page.component";
 import { CreateFormComponent } from "./create-form/create-form.component";
-import { FormDetailsComponent } from "./home-page/form-details/form-details.component";
-import { DisplayFormComponent } from "./home-page/display-form/display-form.component";
-import { FormResolverService } from "./shared/form-resolver.service";
+import { FormDetailsComponent } from "./forms-list/form-details/form-details.component";
+import { DisplayFormComponent } from "./display-form/display-form.component";
+import { SignUpComponent } from "./auth/sign-up/sign-up.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { AuthGuard } from "./auth/auth.guard";
+// import { ResolverService } from "./shared/resolver.service";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
   { path: 'new', component: CreateFormComponent },
-  { path: 'forms-list/:id', component: FormDetailsComponent },
-  { path: 'display/:id', component: DisplayFormComponent, resolve: [FormResolverService] }
+  { path: 'form-details/:id', component: FormDetailsComponent },
+  { path: 'display/:id', component: DisplayFormComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

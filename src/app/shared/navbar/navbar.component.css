@@ -1,0 +1,13 @@
+.dropdown-item {
+  cursor: pointer;
+}
+.material-symbols-outlined {
+  align-items: center;
+  color: white;
+  display: inline-flex;
+}
+.plus {
+  border-radius: 16px;
+  height: 30px;
+  width: 50px;
+}

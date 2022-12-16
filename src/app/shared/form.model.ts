@@ -7,6 +7,9 @@ export class FormModel {
     public allergies: string,
     public codeStatus: string,
     public providerTextArea: string,
+    public vitals: string,
+    public temperature: string,
+    public otherTextArea: string,
     public id?: string
     ) {}
 }

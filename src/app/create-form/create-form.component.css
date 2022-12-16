@@ -2,14 +2,26 @@
   padding: 2em 2em 5em 2em;
 }
 
+input.ng-invalid.ng-touched {
+  border: 1px solid crimson;
+}
+
 .heading-primary {
   font-size: x-large;
   text-align: center;
   padding-bottom: 10px;
 }
 
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .btn {
-  margin: 2em;
+  width: 10rem;
+  margin: 1em;
 }
 
 /* body {

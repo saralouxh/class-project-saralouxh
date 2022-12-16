@@ -1,0 +1,28 @@
+<div class="container pt-4">
+  <div class="alert alert-danger" *ngIf="error">
+      <p>{{error}}</p>
+  </div>
+  <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" *ngIf="!isLoading">
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="loginEmail" class="form-control" name="email" required ngModel email>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="loginPassword" class="form-control" name="password" required ngModel minlength="6">
+      </div>
+      <div class="mt-4">
+          <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">
+              Login
+          </button>
+          <!-- <button class="btn btn-primary" type="button" (click)="onSwitchMode()">
+              Switch
+          </button> -->
+      </div>
+  </form>
+
+  <p class="text-center">Don't have an account? <a routerLink="/sign-up">Sign up here</a></p>
+</div>

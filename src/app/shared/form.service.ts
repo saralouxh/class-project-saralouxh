@@ -3,6 +3,8 @@ import { Subject } from "rxjs";
 import { EventEmitter, Injectable } from "@angular/core";
 import { FirebaseService } from "./firebase-service";
 import { FormModel } from "./form.model";
+import { Form } from "@angular/forms";
+import { objectToArray } from "src/utils/objectToArray";
 
 @Injectable({
   providedIn: 'root'
@@ -19,19 +21,26 @@ export class FormService {
 
   constructor(private firebaseService: FirebaseService) {}
 
-  // Get forms from firebase
+  // Get Forms From Firebase
   getFormsFromFirebase(): any {
-    this.firebaseService.fetchFormsInFirebase().subscribe((res: any) => {
-      this.allForms = res;
-
-      this.formListChanged.next(this.allForms);
-      console.log('allForms:', this.allForms);
-      return this.allForms.slice();
+    return this.firebaseService.fetchFormsInFirebase().subscribe((res: any) => {
+      if (res) {
+        const arrayOfForms = objectToArray(res);
+        this.allForms = arrayOfForms;
+        this.formListChanged.next(this.allForms);
+      }
     });
   }
 
+  // Get All Forms
+  getAllForms() {
+    this.getFormsFromFirebase();
+    console.log('allForms', this.allForms);
+    return this.allForms.slice();
+  }
+
   getSingleForm(id: string) {
-    const form = this.allForms.slice().find(form => form.id === id);
+    const form = this.allForms.slice().find((form) => form.id === id);
     return form;
   }
 
@@ -45,14 +54,10 @@ export class FormService {
     this.formListChanged.next(this.allForms.slice());
   }
 
-  updateForm() {
-
-  }
-
   deleteSingleForm(id: string) {
     this.firebaseService.deleteFormInFirebase(id);
 
-    this.allForms = this.allForms.filter(f => f.id !== id);
+    this.allForms = this.allForms.filter((form) => form.id !== id);
 
     this.formListChanged.next(this.allForms.slice());
   }
