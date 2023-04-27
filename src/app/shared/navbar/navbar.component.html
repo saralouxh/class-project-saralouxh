@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
-    <a routerLink="/home" class="navbar-brand">FormApp</a>
+    <a routerLink="/home" class="navbar-brand">
+      <span class="material-symbols-outlined">
+        ecg_heart
+      </span>
+    </a>
 
     <!-- Search bar -->
     <form class="d-flex">
@@ -10,31 +14,11 @@
       </div>
     </form>
 
-    <!-- Add button -->
-    <button class="plus btn nav-link btn btn-secondary" *ngIf="isAuthenticated">
-      <a routerLink="/new" class="nav-item nav-link">
-        <span class="material-symbols-outlined">
-          add
-        </span>
-      </a>
-    </button>
-
-    <!-- Login button -->
-    <div class="btn btn-outline-secondary" *ngIf="!isAuthenticated">
+    <!-- Sign Out -->
+    <div class="btn btn-outline-secondary" *ngIf="isAuthenticated">
       <button class="btn nav-link">
-        <a routerLink="/login" class="nav-item nav-link">Login</a>
+        <a (click)="onSignOut()" class="nav-item nav-link">Sign Out</a>
       </button>
-    </div>
-
-    <!-- Account dropdown -->
-    <div class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="isAuthenticated">
-        Account
-      </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item">Profile</a>
-          <a class="dropdown-item" (click)="onSignOut()">Sign Out</a>
-        </div>
     </div>
 
   </div>

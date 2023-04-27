@@ -1,0 +1,17 @@
+.card {
+    max-width: 90%;
+    margin: 0 auto;
+    float: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+.material-symbols-outlined {
+    margin: 0 auto;
+    float: none;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 200,
+  'opsz' 66
+}

@@ -1,5 +1,4 @@
-<!-- add angular add row -->
-<div class="container-fluid" *ngIf="formData">
+<div class="container border border-secondary rounded" *ngIf="formData">
   <!-- Edit & Delete Buttons -->
   <div class="float-end">
     <button
@@ -23,115 +22,66 @@
 
   </div>
 
-  <!-- Title -->
-  <table class="table table-bordered">
-    <!-- Title -->
-    <thead>
-      <tr>
-        <th class="text-center" style="height: 41px;">Title: {{formData.title}}</th>
-      </tr>
-    </thead>
-  </table>
+  <div class="mb-3">
+    <label>Title:</label>
+    <input value="{{formData.title}}">
+  </div>
+     
+  <div class="mb-3">
+    <label>Nursing Note:</label>
+    <textarea style="width: 100%;" value="{{formData.nursingTextArea}}"></textarea>
+  </div>
+  
+  <div class="row mb-3">
 
-  <!-- Nursing Notes -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">Nursing Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="height: 41px;">
-          {{formData.nursingTextArea}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="col-sm-6 flex-column d-flex">
+      <label>Name:</label>
+      <input value="{{formData.name}}">
+    </div>
 
-  <!-- Flow Sheets -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center" colspan="2">Flow Sheets</th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th class="text-center">Name</th>
-        <th class="text-center">Age</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="height: 41px;">
-          {{formData.name}}
-        </td>
-        <td style="height: 41px;">
-          {{formData.age}}
-        </td>
-      </tr>
-    </tbody>
+    <div class="col-sm-6 flex-column d-flex">
+      <label>Age:</label>
+      <input value="{{formData.age}}">
+    </div>
 
-    <thead>
-      <tr>
-        <th class="text-center">Allergies</th>
-        <th class="text-center">Code Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="height: 41px;">
-          {{formData.allergies}}
-        </td>
-        <td style="height: 41px;">
-          {{formData.codeStatus}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  </div>
+            
+  <div class="row mb-3">
+  
+    <div class="form-group col-sm-6 flex-column d-flex">
+      <label class="">Allergies:</label>
+      <input value="{{formData.allergies}}">
+    </div>
 
-  <!-- Provider Notes -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">Health Care Provider Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="height: 41px;">
-          {{formData.providerTextArea}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="form-group col-sm-6 flex-column d-flex">
+      <label class="">Code Status:</label>
+      <input value="{{formData.codeStatus}}">
+    </div>
+  
+  </div>
 
-  <!-- Labs & Diagnostics -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center" colspan="2">Lab Results</th>
-      </tr>
-    </thead>
-    <thead>
-      <tr>
-        <th class="text-center">Vitals</th>
-        <th class="text-center">Temperature</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="height: 41px;">
-          {{formData.vitals}}
-        </td>
-        <td style="height: 41px;">
-          {{formData.temperature}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="mb-3">
+    <label for="">Provider Notes:</label>
+    <textarea style="width: 100%;" value="{{formData.providerTextArea}}"></textarea>
+  </div>
+  
+  <div class="row mb-3">
 
-  <!-- Other -->
+    <div class="col-sm-6 flex-column d-flex">
+      <label>Vitals:</label>
+      <input value="{{formData.vitals}}">
+    </div>
 
+    <div class="col-sm-6 flex-column d-flex">
+      <label>Temperature:</label>
+      <input value="{{formData.temperature}}">
+    </div>
+
+  </div>
+  
+  <div class="mb-2">
+    <label for="">Other Notes:</label>
+    <textarea style="width: 100%;"></textarea>
+  </div>
+  
 </div>

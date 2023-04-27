@@ -1,6 +1,8 @@
+<!-- Navbar -->
+<app-navbar *ngIf="isAuthenticated"></app-navbar>
 
-  <!-- Navbar -->
-  <app-navbar></app-navbar>
+<!-- Start page -->
+<app-start-page *ngIf="!isAuthenticated"></app-start-page>
 
-  <!-- Main -->
-  <router-outlet></router-outlet>
+<!-- Main -->
+<router-outlet></router-outlet>

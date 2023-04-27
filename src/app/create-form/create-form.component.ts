@@ -17,16 +17,6 @@ export class CreateFormComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  // createForm = this.fb.group({
-  //   title: ['', Validators.required],
-  //   nursingTextArea: ['', Validators],
-  //   name: ['', Validators.required],
-  //   age: ['', Validators.required],
-  //   allergies: ['', Validators],
-  //   codeStatus: ['', Validators],
-  //   providerTextArea: ['', Validators]
-  // })
-
   ngOnInit() {
     this.createForm = new FormGroup({
       title: new FormControl(null, [Validators.required]),

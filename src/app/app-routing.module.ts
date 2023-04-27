@@ -8,6 +8,7 @@ import { DisplayFormComponent } from "./display-form/display-form.component";
 import { SignUpComponent } from "./auth/sign-up/sign-up.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { StartPageComponent } from "./home-page/start-page/start-page.component";
 // import { ResolverService } from "./shared/resolver.service";
 
 const appRoutes: Routes = [
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'new', component: CreateFormComponent },
   { path: 'form-details/:id', component: FormDetailsComponent },
   { path: 'display/:id', component: DisplayFormComponent },
+  { path: 'start', component: StartPageComponent},
   { path: 'sign-up', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
 ];

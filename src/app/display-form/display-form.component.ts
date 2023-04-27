@@ -27,11 +27,6 @@ export class DisplayFormComponent implements OnInit {
         console.log(this.formData);
       })
     }
-    // this.route.params.subscribe((params: Params) => {
-    //   this.id = params['id'];
-    //   this.formData = this.formService.getSingleForm(this.id);
-    //   console.log(this.formData);
-    // });
   }
 
   onDeleteForm(id: string) {
@@ -39,4 +34,6 @@ export class DisplayFormComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  onEditForm(){
+  }
 }
