@@ -4,6 +4,7 @@ import { catchError, tap } from "rxjs/operators";
 import { BehaviorSubject, Observable, Subject, throwError } from "rxjs";
 import { Router } from "@angular/router";
 import { User } from "./user.model";
+import { environment } from "src/environments/environment";
 
 export interface AuthResponseData {
   kind: string;
@@ -32,7 +33,7 @@ export class AuthService {
   signup(email: string, password: string) {
     // return this prepared observable so that we can subscribe in the auth component
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZbsMbo8AB1J_SpN8cLja4VDdKusFR7e4',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseApiKey,
       // request body payload from Firebase Rest Auth API
       {
         email: email,
@@ -56,7 +57,7 @@ export class AuthService {
   // Login
   login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZbsMbo8AB1J_SpN8cLja4VDdKusFR7e4',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseApiKey,
        {
         email: email,
         password: password,

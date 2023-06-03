@@ -4,15 +4,16 @@
       <span class="material-symbols-outlined">
         ecg_heart
       </span>
+      <span class="navbar-text">NursingSims</span>
     </a>
 
-    <!-- Search bar -->
-    <form class="d-flex">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-        <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+     <div class="ml-auto"> <!-- Add this div with the 'ml-auto' class -->
+      <!-- Sign In/Up -->
+      <div class="btn-group" *ngIf="!isAuthenticated">
+        <a routerLink="/sign-up" class="btn btn-outline-secondary">Sign Up</a>
+        <a routerLink="/login" class="btn btn-outline-secondary">Login</a>
       </div>
-    </form>
+     </div>
 
     <!-- Sign Out -->
     <div class="btn btn-outline-secondary" *ngIf="isAuthenticated">

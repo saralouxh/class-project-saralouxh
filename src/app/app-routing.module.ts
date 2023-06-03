@@ -12,14 +12,14 @@ import { StartPageComponent } from "./home-page/start-page/start-page.component"
 // import { ResolverService } from "./shared/resolver.service";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
   { path: 'new', component: CreateFormComponent },
   { path: 'form-details/:id', component: FormDetailsComponent },
   { path: 'display/:id', component: DisplayFormComponent },
   { path: 'start', component: StartPageComponent},
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
